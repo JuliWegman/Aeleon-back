@@ -8,8 +8,8 @@ export default class productoRepository{
         const { Client } = pg;
         this.BDclient = new Client(BDconfig);
         this.BDclient.connect();
-      }
-      async getProductoById(id){
+    }
+    async getProductoById(id){
         let data=null;
         var error=null;
         try {
@@ -25,10 +25,10 @@ export default class productoRepository{
             console.log(error);
         }
         return {data,error}
-      }
+    }
 
 
-      async getProductos(limit,offset){
+    async getProductos(limit,offset){
         let data=null;
         var error=null;
         try {
@@ -42,11 +42,10 @@ export default class productoRepository{
             error=e;
             console.log(error);
         }
-        console.log(data);
         return {data,error}
-      }
+    }
 
-      async countProductos(){
+    async countProductos(){
         let data=null;
         var error=null;
         try {
@@ -60,5 +59,4 @@ export default class productoRepository{
         }
         return data
     }
-
 }
